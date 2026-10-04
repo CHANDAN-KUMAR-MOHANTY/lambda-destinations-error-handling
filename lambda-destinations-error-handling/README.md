@@ -36,6 +36,10 @@ Add your diagram at `docs/architecture.png`.
 | replay-fn | `handlers/replay.py` | `TABLE`, `PARKING_QUEUE_URL` | Replays FAILED orders, parks after 3 |
 | processor-dlq-fn | `processor/dlq_app.py` | `TABLE` | Same logic, DLQ only, for comparison |
 
+## Front end
+
+A React client in `frontend/` generates and sends each type of order request. See `frontend/README.md`.
+
 ## Configuration
 - `processor-fn`: async retries = 2, max event age = 1 hour, no DLQ.
   Destinations: On success -> `success-queue`, On failure -> `failure-queue`.
