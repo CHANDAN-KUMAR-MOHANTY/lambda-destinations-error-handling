@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const API_URL = import.meta.env.VITE_API_URL || '/api/orders';
+const API_URL = import.meta.env.DEV ? '/api/orders' : import.meta.env.VITE_API_URL || '/api/orders';
 
 const products = [
   { id: 'aurora-lamp', name: 'Aurora Desk Lamp', category: 'Home / lighting', price: 84, icon: '◒', color: '#d9ead6', description: 'Warm, adjustable light for focused work.' },
